@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: "Merriweather", serif;
+  font-size: 100%;
+}
+
+a {
+  display: inline-block;
+  color: #000;
+
+  text-decoration-color: #000;
+  text-decoration-thickness: 3px;
+  text-decoration-style: dashed;
+}
+
+.container {
+  inline-size: min(100% - 2rem, 55rem);
+  margin-inline: auto;
+}
+
+.line {
+  display: flex;
+  gap: var(--line-gap, 1em);
+}
+
+.flow > * + * {
+  margin-top: var(--flow, 1em);
+}
+
+.block {
+  padding-block: 3em;
+}
+
+.between-spaced {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.box {
+  background: var(--box-background, unset);
+  color: var(--box-color, unset);
+  padding: var(--box-space, 1em);
+}
+
+.box[data-theme="primary"] {
+  --box-background: #000;
+  --box-color: #fff;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+nav a {
+  white-space: nowrap;
+}
+
+.button {
+  display: inline-block;
+
+  background: var(--button-background, #000);
+  color: var(--button-color, #fff);
+  font-size: 0.9em;
+  text-decoration: none;
+
+  padding: 0.8em;
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 3em;
+}
+
+.posts > .post:first-child {
+  grid-column: 1/-1;
+
+  border: 3px dashed #000;
+  padding: 1.5em;
+}
+
+.post {
+  display: block;
+}
+
+.post .meta {
+  --line-gap: 0.5em;
+}
+
+.post .category {
+  background: var(--button-background, #000);
+  color: var(--button-color, #fff);
+
+  font-size: 0.75em;
+  text-decoration: none;
+  padding: 0.5em;
+}
+
+.post .title {
+  --flow: 0.5em;
+}
+
+.post .button {
+  --flow: 1.75em;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <template id="post-template">
+      <article class="post flow">
+        <header class="meta line">
+          <a href="#" class="category">PHP</a>
+          <a href="#" class="category">OOP</a>
+          <a href="#" class="category">Beginner</a>
+        </header>
+
+        <h2 class="title">Introduction to OOP in PHP</h2>
+        <p class="description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+          odit, ab nobis consequatur ipsam eum labore fuga excepturi, recusandae
+          blanditiis accusamus aut enim? Similique dolores dignissimos,
+          cupiditate voluptatem nulla dolorum.
+        </p>
+
+        <a class="button" href="#">Read More</a>
+      </article>
+    </template>
+
+    <header class="block container between-spaced">
+      <a class="logo" href="#">My Blog</a>
+
+      <nav class="line">
+        <a href="#">Articles</a>
+        <a href="#">Subscribe Here</a>
+      </nav>
+    </header>
+
+    <main class="container block posts" style="padding-top: 0"></main>
+
+    <footer class="box block" data-theme="primary">
+      <div class="container">
+        <p>Blog design by Lucas Akira Ayabe &copy; 2023</p>
+      </div>
+    </footer>
+  </body>
+</html>
