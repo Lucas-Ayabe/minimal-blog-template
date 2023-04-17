@@ -111,6 +111,12 @@ nav a {
   display: block;
 }
 
+.post img {
+  display: block;
+  max-width: 100%;
+  margin-inline: auto;
+}
+
 .post .meta {
   --line-gap: 0.5em;
 }
