@@ -9,6 +9,17 @@
   font-size: 100%;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
 a {
   display: inline-block;
   color: #000;
@@ -16,6 +27,12 @@ a {
   text-decoration-color: #000;
   text-decoration-thickness: 3px;
   text-decoration-style: dashed;
+}
+
+input {
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.5em;
 }
 
 .container {
@@ -33,7 +50,7 @@ a {
 }
 
 .block {
-  padding-block: 3em;
+  padding-block: var(--block-space, 3em);
 }
 
 .between-spaced {
@@ -66,6 +83,8 @@ nav a {
 
 .button {
   display: inline-block;
+  font-family: inherit;
+  border: none;
 
   background: var(--button-background, #000);
   color: var(--button-color, #fff);
@@ -111,4 +130,89 @@ nav a {
 
 .post .button {
   --flow: 1.75em;
+}
+
+.post .flow {
+  --flow: 0.125em;
+}
+
+.post .block {
+  --block-space: 1em;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+.form[data-variant="horizontal"] {
+  flex-direction: row;
+}
+
+.form[data-variant="horizontal"] :first-child {
+  flex: 1;
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3em;
+}
+
+.testimonials > .title {
+  grid-column: 1/-1;
+
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.testimonial .quote {
+  position: relative;
+
+  font-style: italic;
+  font-size: 1.25em;
+}
+
+.testimonial .quote::before,
+.testimonial .quote::after {
+  font-style: italic;
+  font-size: 1.25em;
+  color: #888;
+}
+
+.testimonial .quote::before {
+  content: "“";
+}
+
+.testimonial .quote::after {
+  content: "”";
+}
+
+.author {
+  display: flex;
+  gap: 1em;
+}
+
+.author .avatar {
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: #000;
+  color: #fff;
+}
+
+.author .name {
+  display: block;
+}
+
+.author .role {
+  color: #555;
+  font-style: italic;
 }
