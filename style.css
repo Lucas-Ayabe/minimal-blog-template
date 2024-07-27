@@ -9,17 +9,6 @@
   font-size: 100%;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-
-  min-height: 100vh;
-}
-
-main {
-  flex: 1;
-}
-
 a {
   display: inline-block;
   color: #000;
@@ -36,7 +25,7 @@ input {
 }
 
 .container {
-  inline-size: min(100% - 2rem, 55rem);
+  inline-size: min(100% - 4rem, 55rem);
   margin-inline: auto;
 }
 
@@ -89,6 +78,7 @@ nav a {
   background: var(--button-background, #000);
   color: var(--button-color, #fff);
   font-size: 0.9em;
+  white-space: nowrap;
   text-decoration: none;
 
   padding: 0.8em;
@@ -97,7 +87,7 @@ nav a {
 .posts {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-  gap: 3em;
+  gap: 1.5em;
 }
 
 .posts > .post:first-child {
@@ -107,8 +97,39 @@ nav a {
   padding: 1.5em;
 }
 
-.post {
+.post:first-child::before,
+.post:first-child .meta {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+}
+
+.post:first-child .meta {
+  align-self: center;
+}
+
+.posts > .post:first-child::before {
+  content: "Featured";
+
   display: block;
+  position: relative;
+  justify-self: end;
+  top: -1.75em;
+
+  background: #000;
+  color: #fff;
+  font-size: 0.85em;
+
+  padding: 1em;
+}
+
+.post {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: start;
+  gap: 1em;
+
+  border: 1px solid #bbb;
+  padding: 1.5em;
 }
 
 .post img {
@@ -122,6 +143,9 @@ nav a {
 }
 
 .post .category {
+  display: flex;
+  align-items: center;
+
   background: var(--button-background, #000);
   color: var(--button-color, #fff);
 
@@ -130,35 +154,9 @@ nav a {
   padding: 0.5em;
 }
 
-.post .title {
-  --flow: 0.5em;
-}
-
-.post .button {
-  --flow: 1.75em;
-}
-
-.post .flow {
-  --flow: 0.125em;
-}
-
-.post .block {
-  --block-space: 1em;
-}
-
 .form {
-  display: flex;
-  flex-direction: column;
-
-  width: 100%;
-}
-
-.form[data-variant="horizontal"] {
-  flex-direction: row;
-}
-
-.form[data-variant="horizontal"] :first-child {
-  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr auto;
 }
 
 .testimonials {
